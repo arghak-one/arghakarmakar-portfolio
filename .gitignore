@@ -31,3 +31,5 @@ error.txt
 error_utf8.txt
 public/models/character.glb
 public/models/.gitattributes
+node_modules
+node_modules
