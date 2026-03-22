@@ -1,0 +1,153 @@
+.header {
+  display: flex;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  margin-bottom: -100px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 9999;
+}
+.header ul {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-gap: 25px;
+  row-gap: 8px;
+  align-items: end;
+}
+.header ul li {
+  margin-left: 0px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 4px 10px;
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  transition: 0.3s;
+}
+.theme-toggle:hover {
+  background: var(--text-main);
+  color: var(--bg-main);
+}
+@keyframes textShine {
+  to {
+    background-position: -200% center;
+  }
+}
+
+.navbar-connect {
+  display: none;
+  margin: 0 auto;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  background: linear-gradient(to right, #00f5d4, #ff6ec7, #00f5d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 4s linear infinite;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-connect:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 245, 212, 0.4));
+  transform: scale(1.05);
+}
+.navbar-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+@media only screen and (min-width: 500px) {
+  .header {
+    padding: 20px 0px;
+  }
+  .header ul {
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+  }
+  .navbar-title {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .navbar-connect {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header {
+    padding: 35px 0px;
+  }
+  .header ul {
+    column-gap: 40px;
+    font-size: 16px;
+  }
+  .navbar-connect {
+    font-size: 16px;
+  }
+  .navbar-title {
+    font-size: 18px;
+  }
+}
+
+/* Neon Tech Theme for Nav Links */
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #a8b2d1 !important;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.nav-link:hover {
+  color: #00f5d4 !important;
+  text-shadow: 0 0 8px rgba(0, 245, 212, 0.6);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #ff6ec7 !important;
+  text-shadow: 0 0 6px rgba(255, 110, 199, 0.5);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f5d4, #ff6ec7);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
