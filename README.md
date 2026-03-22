@@ -57,12 +57,4 @@ src/
 
 ---
 
-## 🚀 Getting Started
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/arghak-one/arghakarmakar-portfolio.git
-2️⃣ Install dependencies
-npm install
-3️⃣ Run locally
-npm run dev
